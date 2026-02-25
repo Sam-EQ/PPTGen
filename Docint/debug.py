@@ -1,6 +1,7 @@
 import asyncio
 import sys
 import time
+import json
 from pathlib import Path
 
 from marker.output import text_from_rendered
@@ -18,7 +19,10 @@ async def debug_pipeline(pdf: Path):
     out = TEMP_DIR / "debug"
     out.mkdir(parents=True, exist_ok=True)
 
-    print(f"📄 PDF: {pdf.name}")
+    image_dir = out / "images"
+    image_dir.mkdir(parents=True, exist_ok=True)
+
+    print(f"PDF: {pdf.name}")
 
     t0 = time.perf_counter()
 
@@ -26,32 +30,59 @@ async def debug_pipeline(pdf: Path):
     md, _, _ = text_from_rendered(rendered)
 
     t_marker = time.perf_counter() - t0
-    print(f"⏱️ Marker extraction: {t_marker:.2f}s")
+    print(f"⏱Marker extraction: {t_marker:.2f}s")
 
     t0 = time.perf_counter()
 
-    images = extract_images(rendered)
-    print(f"🖼️ Images detected: {len(images)}")
+    images = extract_images(rendered, image_dir)
+    print(f"Images detected: {len(images)}")
+
+    t_extract = time.perf_counter() - t0
+    print(f"⏱Image extraction + saving: {t_extract:.2f}s")
+
+    t0 = time.perf_counter()
 
     descriptions = await describe_images_parallel(images)
 
-    t_images = time.perf_counter() - t0
-    print(f"⏱️ Image captioning: {t_images:.2f}s")
+    t_caption = time.perf_counter() - t0
+    print(f"⏱Image captioning: {t_caption:.2f}s")
+
     t0 = time.perf_counter()
 
     final_md = inject_descriptions(md, images, descriptions)
 
-    path = out / "final_with_images.md"
-    path.write_text(final_md, encoding="utf-8")
+    md_path = out / "final_with_images.md"
+    md_path.write_text(final_md, encoding="utf-8")
 
-    t_write = time.perf_counter() - t0
-    print(f"⏱️ Injection + write: {t_write:.2f}s")
+    t_inject = time.perf_counter() - t0
+    print(f"⏱Injection + write: {t_inject:.2f}s")
+
+    registry = {
+        "images": []
+    }
+
+    for img, desc in zip(images, descriptions):
+        registry["images"].append({
+            "id": img["id"],
+            "source": "extracted",
+            "page": img["page"],
+            "path": img["path"],
+            "description": desc
+        })
+
+    registry_path = out / "visual_assets.json"
+    registry_path.write_text(
+        json.dumps(registry, indent=2),
+        encoding="utf-8"
+    )
 
     total = time.perf_counter() - start_total
 
-    print("\n✅ Done")
-    print(f"📄 Output: {path}")
-    print(f"⏱️ TOTAL TIME: {total:.2f}s")
+    print("\nDone")
+    print(f"Markdown → {md_path}")
+    print(f"Images → {image_dir}")
+    print(f"Registry → {registry_path}")
+    print(f"⏱TOTAL TIME: {total:.2f}s")
 
 
 if __name__ == "__main__":
