@@ -63,3 +63,4 @@ dmypy.json
 # ---- Build / packaging ----
 *.egg-info/
 *.egg
+tmp/
