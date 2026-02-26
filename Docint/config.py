@@ -14,5 +14,5 @@ if not OPENAI_API_KEY:
 
 MARKER_LLM_MODEL = os.getenv("MARKER_LLM_MODEL", "gpt-4o-mini")
 
-os.environ["TORCH_DEVICE"] = "cpu"
+os.environ["TORCH_DEVICE"] = "cuda"
 os.environ["IN_STREAMLIT"] = "true"
