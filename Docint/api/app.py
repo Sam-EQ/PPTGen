@@ -1,26 +1,23 @@
+from fastapi import FastAPI, UploadFile, File
 import uuid
 import shutil
 from pathlib import Path
-from fastapi import FastAPI, UploadFile, File
-
 from config import TEMP_DIR
-from core.raw_pipeline import extract_raw_markdown_with_images
+from core.pipeline import _PIPELINE
 
-app = FastAPI(title="Universal Markdown Extractor")
-
+app = FastAPI()
 
 @app.post("/extract")
-async def extract(file: UploadFile = File(...)):
+async def extract_markdown(file: UploadFile = File(...)):
     req_id = uuid.uuid4().hex
-    req_dir = TEMP_DIR / req_id
-    req_dir.mkdir(parents=True, exist_ok=True)
-
-    pdf_path = req_dir / file.filename
+    pdf_path = TEMP_DIR / f"{req_id}_{file.filename}"
+    
     with open(pdf_path, "wb") as f:
         shutil.copyfileobj(file.file, f)
-
+        
     try:
-        markdown = await extract_raw_markdown_with_images(pdf_path)
+        markdown = await _PIPELINE.process_pdf(pdf_path)
         return {"markdown": markdown}
     finally:
-        shutil.rmtree(req_dir, ignore_errors=True)
+        if pdf_path.exists():
+            pdf_path.unlink()

@@ -10,10 +10,11 @@ __pycache__/
 dist/
 build/
 *.manifest
+tmp/
 
-# Virtual environments (doc/ is project venv)
-ppt/
+# Virtual environments
 doc/
+ppt/
 venv/
 .venv/
 env/
@@ -23,6 +24,7 @@ ENV/
 .env
 .env.local
 .env.*.local
+*.pem
 
 # ---- IDE & editors ----
 .idea/
@@ -36,7 +38,7 @@ ENV/
 Thumbs.db
 Desktop.ini
 
-# ---- Project temp & debug ----
+# ---- Project ----
 Docint/tmp/
 Docint/debug/
 
@@ -61,7 +63,7 @@ dmypy.json
 # ---- Jupyter ----
 .ipynb_checkpoints/
 
-# ---- Build / packaging ----
-*.egg-info/
-*.egg
-tmp/
+# ---- Optional ----
+.python-version
+pip-log.txt
+pip-delete-this-directory.txt

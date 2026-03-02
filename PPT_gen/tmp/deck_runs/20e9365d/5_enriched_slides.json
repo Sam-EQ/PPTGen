@@ -1,0 +1,142 @@
+{
+  "slides": [
+    {
+      "title": "Key Dates & Milestones",
+      "bullets": [
+        "RFP Issue Date: May 20, 2024",
+        "Questions Deadline: June 3, 2024 at 2:00 PM",
+        "Proposal Submission Due: June 14, 2024 at 1:00 PM",
+        "Notification of Selected Candidate: August 19, 2024",
+        "Anticipated Project Completion: September 30, 2028"
+      ],
+      "notes": "Highlight important dates for the project timeline.",
+      "visual_hint": "Timeline graphic"
+    },
+    {
+      "title": "Client & Project Overview",
+      "bullets": [
+        "Client: City of Dallas",
+        "Project: KBHCCD Master Plan \u2013 Component 1",
+        "Type: Convention Center Expansion",
+        "Location: Dallas, Texas",
+        "Vision: Enhance exhibition space and support local development"
+      ],
+      "notes": "Provide context about the client and project goals.",
+      "visual_hint": "Map of Dallas with project location"
+    },
+    {
+      "title": "Scope of Services",
+      "bullets": [
+        "Project Phases: Preliminary to Construction Administration",
+        "Consultant Disciplines: Architecture, Engineering, Landscape, etc.",
+        "Key Requirements: LEED certification, quality assurance",
+        "Sustainability: LEED Gold, 90% fossil fuel reduction"
+      ],
+      "notes": "Discuss the comprehensive services required for the project.",
+      "visual_hint": "Flowchart of project phases"
+    },
+    {
+      "title": "Deliverables",
+      "bullets": [
+        "Design Deliverables: Drawings, specifications, documents",
+        "Stakeholder Deliverables: Engagement materials",
+        "Sustainability Deliverables: LEED documentation",
+        "Construction Phase Deliverables: Site reports, punch lists"
+      ],
+      "notes": "Outline the expected deliverables throughout the project.",
+      "visual_hint": "Checklist graphic"
+    },
+    {
+      "title": "Proposal Submission Requirements",
+      "bullets": [
+        "Submission Method: Electronic via Bonfire",
+        "Required Sections: Cover letter, qualifications, experience",
+        "Mandatory Forms: Conflict-of-Interest, M/WBE forms",
+        "Compliance: Specific forms required to avoid disqualification"
+      ],
+      "notes": "Clarify the requirements for proposal submissions.",
+      "visual_hint": "Submission process diagram"
+    },
+    {
+      "title": "Evaluation & Selection Criteria",
+      "bullets": [
+        "Qualifications: 15 points",
+        "Team Organization: 10 points",
+        "Project Experience: 20 points",
+        "Sustainable Goals: 10 points",
+        "Total Score: 100 points"
+      ],
+      "notes": "Explain the scoring system for proposal evaluation.",
+      "visual_hint": "Scoring rubric graphic"
+    },
+    {
+      "title": "Commercial & Contractual Terms",
+      "bullets": [
+        "Estimated Budget: Not specified",
+        "Insurance: Professional liability required",
+        "Contract Form: Standard Architect Services Contract"
+      ],
+      "notes": "Discuss the financial and contractual aspects.",
+      "visual_hint": "Contract overview graphic"
+    },
+    {
+      "title": "Risk, Compliance & Eligibility Requirements",
+      "bullets": [
+        "Licensing: Must be registered with City of Dallas",
+        "Experience: Relevant project experience required",
+        "M/WBE Compliance: Required participation"
+      ],
+      "notes": "Highlight the compliance and eligibility criteria.",
+      "visual_hint": "Risk assessment chart"
+    },
+    {
+      "title": "Schedule & Procurement Process",
+      "bullets": [
+        "Major Steps: RFQ, shortlist, RFP, interviews",
+        "High-level Schedule: Completion by September 30, 2028"
+      ],
+      "notes": "Summarize the procurement timeline.",
+      "visual_hint": "Gantt chart"
+    },
+    {
+      "title": "Stakeholder Engagement, Design Vision & Performance Expectations",
+      "bullets": [
+        "Design Vision: Enhance connectivity and economic development",
+        "Engagement: Public workshops and meetings",
+        "Performance: Achieve LEED Gold Certification"
+      ],
+      "notes": "Discuss the engagement strategy and performance goals.",
+      "visual_hint": "Engagement strategy graphic"
+    },
+    {
+      "title": "Technology, BIM & Digital Requirements",
+      "bullets": [
+        "BIM/CAD Requirements: Not specified",
+        "Collaboration Platforms: Not specified"
+      ],
+      "notes": "Outline the technological requirements for the project.",
+      "visual_hint": "Technology integration graphic"
+    },
+    {
+      "title": "Questions, Contact Information & Addenda",
+      "bullets": [
+        "Point of Contact: Rosa Fleming, Director",
+        "Questions Protocol: Submit via Bonfire by June 3, 2024",
+        "Addenda Issuance: Posted on Bonfire"
+      ],
+      "notes": "Provide contact information and question submission details.",
+      "visual_hint": "Contact information slide"
+    },
+    {
+      "title": "Alignment with Perkins&Will Core Values",
+      "bullets": [
+        "Design Excellence: High-quality design and functionality",
+        "Sustainability: Commitment to LEED Gold",
+        "Social Purpose: Enhancing community connectivity",
+        "Diversity: M/WBE participation promotes inclusivity"
+      ],
+      "notes": "Discuss how the project aligns with core values.",
+      "visual_hint": "Core values infographic"
+    }
+  ]
+}
