@@ -13,6 +13,7 @@ build/
 
 # Virtual environments (doc/ is project venv)
 ppt/
+doc/
 venv/
 .venv/
 env/
